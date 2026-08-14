@@ -70,10 +70,15 @@ button{
    margin-right: 20px;
     color: #e3d5ee;
    background-color: rgb(93, 46, 124);
+   border: 2px solid;
+    border-radius: 9px;
 }  
 
 #btnLimpar{
     background-color:rgb(93, 46, 124); 
     color: #e3d5ee;
     margin-right: 20px;
+    border: 2px solid;
+    border-radius: 9px;
 }
+
