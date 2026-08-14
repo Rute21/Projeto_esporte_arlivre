@@ -1,7 +1,7 @@
 <section id="form">
     <h2>Cadastro de Atleta</h2>
 
-    <form id="form-atleta" (submit)="exibirDados()">
+    <form id="form-atleta" (submit)="salvar()">
         <label for="nome">Nome Completo:</label>
         <input type="text" name="nome" id="nome" [(ngModel)] = "nome" class="input01" maxlength="60"
          required placeholder="Digite o nome completo">
@@ -11,13 +11,13 @@
         required placeholder="Digite o cpf">
 
         <label for="sexo">Sexo:</label>
-        <input type="radio" name="sexo" id="sexoM" [(ngModel)] = "sexoF" class="radio01" 
+        <input type="radio" name="sexo" id="sexo" [(ngModel)] = "sexo" class="radio01" 
         required value="M"> <span>Masculino</span>
 
-       <input type="radio" name="sexo" id="sexoF" class="radio01" 
-       required value="F"> <span>Feminino</span>
+       <input type="radio" name="sexo" id="sexo" [(ngModel)] = "sexo" class="radio01" 
+       required value="F"><span>Feminino</span>
 
-       <input type="radio" name="sexo" id="sexoN" class="radio01" 
+       <input type="radio" name="sexo" id="sexo" [(ngModel)] = "sexo" class="radio01" 
        required value="N"><span> Não Declarar</span>
 
        <label for="uf">UF:</label>
@@ -28,8 +28,8 @@
        <input type="text" name="cep" id="cep" [(ngModel)] = "cep" class="input02" maxlength="9"
        required placeholder="Digite o cep">
 
-       <label for="rua-lagradouro">Rua/Lagradouro:</label>
-       <input type="text" name="rua-lagradouro" id="rua-lagradouro" [(ngModel)] = "rua-lagradouro" class="input01" maxlength="100"
+       <label for="ruaLogradouro">Rua/Logradouro:</label>
+       <input type="text" name="ruaLogradouro" id="ruaLogradouro" [(ngModel)] = "ruaLogradouro" class="input01" maxlength="100"
         required placeholder="Digite a Rua ou Lagradouro">
 
       <label for="bairro">Bairro:</label>

@@ -5,7 +5,7 @@ export class Atleta{
     sexo: string = ''
     uf: string = ''
     cep: number = 0
-    ruaLgradouro: string = ''
+    ruaLogradouro: string = ''
     bairro: string = ''
     cidade: string = ''
 }
