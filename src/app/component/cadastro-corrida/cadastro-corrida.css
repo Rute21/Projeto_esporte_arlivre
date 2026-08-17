@@ -1,0 +1,101 @@
+.cadastro{
+    width: 1000px;
+    margin: 20px auto;
+    padding: 30px;
+    border: 3px solid #7040a0;
+    border-radius: 30px;
+    background-color: #fbfafc;
+}
+
+h1{
+    margin: 30px 0px;
+    text-transform: uppercase;
+    color: rgb(106, 89, 146);
+}
+
+label{
+    display: block;
+    padding: 20px 0px;
+    color: rgb(106, 89, 146);
+}
+    
+
+
+input{
+    height: 30px;
+    padding: 20px;
+    color: rgb(133, 72, 151);
+    border-radius: 9px;
+    margin-right: 15px;
+    
+}
+.input03{
+    width: 400px;
+    color: rgb(133, 72, 151);
+}
+
+
+button{
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    border: 2px solid;
+    color: #e3d5ee;
+    font-size: 20px;
+    border-radius: 9px;
+    background-color: rgb(93, 46, 124);
+}
+
+button:hover {
+    transform: translateY(-4px);
+}
+
+.checkbox {
+    display: inline-block;
+    margin-right: 3px;
+}
+
+.data {
+    margin-right: 25px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    border: 2px solid #777783;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+}
+
+input[type="date"] {
+    width: 400px;
+    height: 45px;
+    border: 2px solid #777783;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.distancias {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.distancias label {
+    color: #4d168c;
+    font-size: 17px;
+}
+
+.distancias input {
+    margin-right: 5px;
+}
