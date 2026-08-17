@@ -75,6 +75,7 @@ button{
    background-color: rgb(93, 46, 124);
    border: 2px solid;
     border-radius: 9px;
+    cursor: pointer
 }  
 
 #btnLimpar{
@@ -83,6 +84,14 @@ button{
     margin-right: 20px;
     border: 2px solid;
     border-radius: 9px;
+    cursor: pointer;
+    
+}
+ button:hover{
+    transform: translateY(-4px);
+ }
+#btnLimpar:hover{
+    transform: translateY(-4px);
 }
 
 .radio01 {
