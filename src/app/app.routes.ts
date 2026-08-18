@@ -6,6 +6,8 @@ import { HomeComponent } from './component/home-component/home-component';
 
 import { CadastroCorrida } from './component/cadastro-corrida/cadastro-corrida';
 
+import { ListaAtleta } from './component/lista-atleta/lista-atleta';
+
 export const routes: Routes = [
 
     {
@@ -28,6 +30,11 @@ export const routes: Routes = [
     {
         path:"cadastrocorrida",
         component:CadastroCorrida,
+    },
+
+    {
+        path:"listaAtleta",
+        component:ListaAtleta,
     }
 
 ];

@@ -88,9 +88,11 @@ button{
     
 }
  button:hover{
+   
     transform: translateY(-4px);
  }
 #btnLimpar:hover{
+    
     transform: translateY(-4px);
 }
 
