@@ -21,6 +21,10 @@ h2{
     align-items: center;
     width: 100%;
     color: rgb(106, 89, 146);
+    box-shadow: 0 2px 9px rgba(0, 0, 0, 0.10);
+    border: 2px dashed ;
+    margin: 12px auto;
+    padding: 15px 20px;
     
 }
 
@@ -29,20 +33,14 @@ h2{
       display: flex;
      align-items: center;
      justify-content: space-between;
-    
       width: 90%;
       max-width: 1000px;
-    
      margin: 12px auto;
      padding: 15px 20px;
-    
      background-color: white;
-    
       border: 1px solid #ddd;
       border-radius: 10px;
-    
      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.10);
-
      box-sizing: border-box;
 
     }
