@@ -1,0 +1,106 @@
+#section-lista-Atleta{
+    width: 1000px;
+    margin: 20px auto;
+    padding: 30px;
+    border: 3px solid #7040a0;
+    border-radius: 30px;
+    background-color: #fbfafc;
+    
+}
+
+
+h2{
+   margin: 30px 0px;
+   text-transform: uppercase;
+   color: rgb(106, 89, 146);
+    
+}
+
+.div-item-pessoa{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: rgb(106, 89, 146);
+    
+}
+
+.atleta-item {
+
+      display: flex;
+     align-items: center;
+     justify-content: space-between;
+    
+      width: 90%;
+      max-width: 1000px;
+    
+     margin: 12px auto;
+     padding: 15px 20px;
+    
+     background-color: white;
+    
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    
+     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.10);
+
+     box-sizing: border-box;
+
+    }
+
+    .span-dados-atleta {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: #333;
+    }
+
+
+/* Área onde ficam os dois botões */
+.span-lnk-atletas {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+  }
+  
+  /* Botões A e E */
+  .lnk-atleta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: 32px;
+    height: 32px;
+  
+    border-radius: 6px;
+  
+    color: white;
+    text-decoration: none;
+  
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+  
+    cursor: pointer;
+  
+    transition: 0.2s;
+   
+  }
+  
+  /* Botão Alterar */
+  .lnk-alterar {
+    background-color: rgb(106, 89, 146);
+  
+  }
+  
+  /* Botão Excluir */
+  .lnk-excluir {
+    background-color: #994a52;
+  }
+  
+  /* Efeito quando passar o mouse */
+  .lnk-atleta:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+  }
+
+
