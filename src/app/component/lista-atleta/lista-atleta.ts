@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ChangeDetectorRef } from '@angular/core';
 import { Atleta } from '../../models/Atleta';
 
 import { AtletaService } from '../../service/atleta-service';
@@ -18,7 +18,12 @@ export class ListaAtleta {
     //listaAtletas: Atleta[] = [];
     listaAtletas = signal<Atleta[]>([]);
   
-    constructor(private listaService: AtletaService,private router: Router ) {}
+    constructor(
+      private listaService: AtletaService,
+      private router: Router,
+      private cdr: ChangeDetectorRef 
+
+      ) {}
   
     ngOnInit(){
       this.listar();
@@ -31,6 +36,8 @@ export class ListaAtleta {
           //this.listaAtletas = [...dadosAtletas].sort((a, b) => a.nome.localeCompare(b.nome));
             this.listaAtletas.set([...dadosAtletas].sort((a,b) =>
              a.nome.localeCompare(b.nome)))
+
+             this.cdr.detectChanges()
         },
         error: (msgErro: any) => {
           console.log("Erro ao listar Atletas", msgErro);
