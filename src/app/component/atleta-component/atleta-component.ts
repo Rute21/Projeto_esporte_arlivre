@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
+import { ActivatedRoute } from '@angular/router';
 import { AtletaService } from '../../service/atleta-service';
 import { Atleta } from '../../models/Atleta';
 
@@ -20,9 +20,16 @@ export class AtletaComponent {
   bairro = ''
   cidade = ''
   uf = ''
+
+  idAtleta = 0
+  editar = false
   
   //DECLARAÇÃO DO CONTRUTOR
-  constructor(private atletaService: AtletaService){}
+  constructor(
+    private atletaService: AtletaService,
+    private http: ActivatedRoute,
+    private cdr: ChangeDetectorRef 
+    ){}
 
 //DECLARAÇÃO DE FUNÇÕES
 exibirDados(){
@@ -31,6 +38,16 @@ exibirDados(){
 
     this.limparDados()
 }
+
+  ngOnInit(){
+    this.idAtleta = Number(this.http.snapshot.paramMap.get('id'))
+
+    if(this.idAtleta > 0){
+      this.editar = true
+      this.carregaDados(this.idAtleta)
+    }
+  }
+
   limparDados(){
     this.nome = ''
     this.cpf = 0
@@ -40,6 +57,30 @@ exibirDados(){
     this.ruaLogradouro = ''
     this.bairro = ''
     this.cidade =''
+  }
+
+  carregaDados(idAtleta: number){
+    this.atletaService.listarAtleta(idAtleta)
+    .subscribe({
+      next:(dadosAtleta)=>{
+
+        this.nome = dadosAtleta.nome
+        this.cpf = dadosAtleta.cpf 
+        this.sexo = dadosAtleta.sexo
+        this.cep = dadosAtleta.cep
+        this.uf = dadosAtleta.uf
+        this.ruaLogradouro = dadosAtleta.ruaLogradouro
+        this.bairro = dadosAtleta.bairro
+        this.cidade = dadosAtleta.cidade
+       
+        //EXECUTA A DETECÇÃO DE ALTERAÇÃO MANUALMENTE
+      this.cdr.detectChanges()
+
+      },
+      error:(msgErro)=>{
+        console.log('ERRO AO LISTAR ATLETA', msgErro)
+      }
+    })
   }
 
   enviarDadosAtleta(){
@@ -53,7 +94,22 @@ exibirDados(){
   atleta.cidade = this.cidade
   atleta.uf = this.uf
 
-  this.atletaService.salvarAtleta(atleta)
+  if(this.editar){
+  atleta.id = this.idAtleta
+
+    this.atletaService.alterarAtleta(atleta)
+    .subscribe({
+      next:(resposta)=>{
+        console.log(resposta)
+      },
+      error:(msgErro)=>{
+        console.log(msgErro)
+      }
+    })
+
+  }else{
+
+    this.atletaService.salvarAtleta(atleta)
   .subscribe({
     next:(resposta)=>{
       console.log(resposta)
@@ -63,6 +119,11 @@ exibirDados(){
     }
   })
 
+
+  }
+
+
+  
   this.limparDados()
 
   this.atletaService.listarAtletas()
