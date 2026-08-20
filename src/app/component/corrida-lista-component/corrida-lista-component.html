@@ -1,0 +1,61 @@
+<div id="div-lista">
+
+    <h2>Corridas Disponíveis</h2>
+
+    
+    <div class="cabecalho-corrida">
+        <span>Descrição</span>
+        <span>Data</span>
+        <span>Distâncias</span>
+        <span>Ação</span>
+    </div>
+
+
+    <div id="lista-corrida">
+
+        @for (elem of listaCorridas(); track elem.id) {
+
+       
+            <div class="item-corrida">
+
+                <span class="descricao">
+                    {{elem.descricao_corrida}}
+                </span>
+
+                <span class="data">
+                    {{elem.data_corrida}}
+                </span>
+
+                <span class="distancias">
+                    {{elem.distancia5km ? '5km' : ''}}
+                    {{elem.distancia10km ? ' 10km' : ''}}
+                    {{elem.distancia25km ? ' 25km' : ''}}
+                </span>
+
+                <span class="links-lista">
+
+                    
+                    <button class="btn-inscrever"
+                            (click)="inscrever(elem)">
+                        Inscrever-se
+                    </button>
+
+                    <button class="btn-excluir"
+                            (click)="excluir(elem)">
+                      Excluir </button>
+
+                </span>
+
+            </div>
+
+        } @empty {
+
+            <div class="div-item-corrida">
+                NENHUM REGISTRO NA LISTA
+            </div>
+
+        }
+
+    </div>
+
+</div>

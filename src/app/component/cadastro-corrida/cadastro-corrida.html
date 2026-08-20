@@ -2,16 +2,18 @@
 
     <h1>CADASTRO DE CORRIDA</h1>
 
-    <form>
+    <form (ngSubmit)="salvar()">
 
         <label for="descricao">Descrição da Corrida:</label>
 
-        <textarea id="descricao"placeholder="Ex: 5ª Maratona Noturna da Cidade" class="input03"></textarea>
+        <textarea
+            id="descricao" name="descricao" placeholder="Ex: 5ª Maratona Noturna da Cidade" 
+             class="input03" [(ngModel)]="corrida.descricao_corrida"></textarea>
 
 
         <label for="data">Data da Corrida:</label>
 
-        <input  type="date" id="data" class="input03">
+        <input type="date" id="data" name="data" class="input03" [(ngModel)]="corrida.data_corrida">
 
 
         <label>Distâncias Disponíveis:</label>
@@ -19,19 +21,13 @@
         <div class="distancias">
 
             <label>
-                <input type="checkbox" value="5km">
-                5km
-            </label>
+               <input type="checkbox" name="distancia5km" [(ngModel)]="corrida.distancia5km">5km </label>
 
             <label>
-                <input type="checkbox" value="10km">
-                10km
-            </label>
+                <input type="checkbox" name="distancia10km" [(ngModel)]="corrida.distancia10km"> 10km</label>
 
             <label>
-                <input type="checkbox" value="25km">
-                25km
-            </label>
+                <input type="checkbox" name="distancia25km" [(ngModel)]="corrida.distancia25km">25km </label>
 
         </div>
 

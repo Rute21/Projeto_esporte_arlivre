@@ -8,6 +8,8 @@ import { CadastroCorrida } from './component/cadastro-corrida/cadastro-corrida';
 
 import { ListaAtleta } from './component/lista-atleta/lista-atleta';
 
+import { CorridaListaComponent } from './component/corrida-lista-component/corrida-lista-component';
+
 export const routes: Routes = [
 
     {
@@ -35,6 +37,11 @@ export const routes: Routes = [
     {
         path:"listaAtleta",
         component:ListaAtleta,
+    },
+
+    {
+        path:"listacorrida",
+        component:CorridaListaComponent,
     }
 
 ];

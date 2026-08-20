@@ -1,0 +1,124 @@
+#div-lista {
+    width: 1000px;
+    min-height: 600px;
+
+    margin: 20px auto;
+    padding: 25px;
+
+    color: rgb(90, 53, 126);
+
+    background-color: #fbfafc;
+
+    border-radius: 30px;
+
+    box-sizing: border-box;
+    border: 3px solid;
+    
+}
+
+h2{
+    margin: 30px 0px;
+    text-transform: uppercase;
+    color: rgb(106, 89, 146);
+}
+
+
+.item-corrida > .dados-corrida {
+  
+        margin: 15px 0px;
+        padding: 18px 20px;
+    
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        background-color: rgb(224, 220, 226);
+    
+        border: 1px solid #dddddd;
+        border-radius: 10px;
+    
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+    
+        box-sizing: border-box;
+    }
+    .cabecalho-corrida {
+        display: grid;
+    
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    
+        padding: 10px;
+    
+        background-color: #cfbce7;
+    
+        font-weight: bold;
+    
+        color:rgb(93, 46, 124); 
+    }
+    
+    
+    .item-corrida {
+        display: grid;
+    
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    
+        align-items: center;
+    
+        padding: 10px;
+    
+        border-bottom: 1px solid #ddd;
+    }
+    
+    
+    .links-lista {
+        display: flex;
+    
+        align-items: center;
+    
+        gap: 10px;
+    }
+    
+    
+    .lnk-inscrever {
+        color: rgb(106, 89, 146);
+    
+        text-decoration: underline;
+    
+        cursor: pointer;
+    }
+    
+    
+    .btn-inscrever {
+        background-color:rgb(93, 46, 124); 
+    
+        color: white;
+    
+        border: none;
+    
+        padding: 7px 12px;
+    
+        border-radius: 5px;
+    
+        cursor: pointer;
+    }
+
+    .btn-excluir:hover{
+        background-color: rgb(230, 109, 73);
+    }
+    .btn-inscrever:hover{
+        background-color: rgb(106, 89, 146);
+    }
+    
+   
+    .btn-excluir{
+        background-color:rgb(141, 81, 76); 
+    
+        color: white;
+    
+        border: none;
+    
+        padding: 7px 12px;
+    
+        border-radius: 5px;
+    
+        cursor: pointer;
+    }
