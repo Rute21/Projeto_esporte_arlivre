@@ -41,7 +41,7 @@ export class CorridaListaComponent {
   }
 
 
-  // INSCREVER-SE NA CORRIDA
+  // FUNÇÃO INCREVER-SE
   inscrever(objCorrida: Corrida) {
 
     console.log('Corrida selecionada:', objCorrida);
@@ -50,7 +50,7 @@ export class CorridaListaComponent {
 
   }
 
-  // EXCLUIR CORRIDA
+  // FUNÇÃO DE EXCLUIR
 excluir(objCorrida: Corrida) {
 
   if (confirm(`Deseja realmente excluir a corrida "${objCorrida.descricao_corrida}"?`)) {
