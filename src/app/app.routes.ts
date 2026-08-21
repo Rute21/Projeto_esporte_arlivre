@@ -10,6 +10,8 @@ import { ListaAtleta } from './component/lista-atleta/lista-atleta';
 
 import { CorridaListaComponent } from './component/corrida-lista-component/corrida-lista-component';
 
+import { Incricoes } from './component/incricoes/incricoes';
+
 export const routes: Routes = [
 
     {
@@ -42,6 +44,11 @@ export const routes: Routes = [
     {
         path:"listacorrida",
         component:CorridaListaComponent,
+    },
+
+    {
+        path:"incricoes",
+        component:Incricoes,
     }
 
 ];

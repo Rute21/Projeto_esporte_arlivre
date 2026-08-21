@@ -1,0 +1,243 @@
+.inscricao{
+    width: 1000px;
+    margin: 20px auto;
+    padding: 30px;
+    border: 3px solid #7040a0;
+    border-radius: 30px;
+    background-color: #fbfafc;
+}
+
+h1{
+    margin: 25px 0px;
+    text-transform: uppercase;
+    color: rgb(106, 89, 146);
+}
+
+label{
+    display: block;
+    padding: 20px 0px;
+    color: rgb(106, 89, 146);
+    font-size: 1.2em;
+}
+    
+input{
+    height: 30px;
+    padding: 20px;
+    color: rgb(133, 72, 151);
+    border-radius: 9px;
+    margin-right: 15px;
+    
+}
+
+strong,span{
+    display: block;
+    padding: 20px 0px;
+    color: rgb(84, 62, 136);
+}
+
+#btn-finalizar{
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    border: 2px solid;
+    color: #e3d5ee;
+    font-size: 20px;
+    border-radius: 9px;
+    background-color: rgb(93, 46, 124);
+}
+
+button{
+    width: 500px;
+    height: 40px;
+    cursor: pointer;
+    border: 2px solid;
+    color: #e3d5ee;
+    font-size: 20px;
+    border-radius: 9px;
+    background-color: rgb(93, 46, 124);
+}
+
+.linha {
+    display: flex;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+
+/* CAMPOS */
+
+.campo {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.campo label {
+    color: #7040a0;
+
+    font-size: 17px;
+
+    margin-bottom: 10px;
+}
+
+
+/* TAMANHO DOS CAMPOS */
+
+.atleta {
+    width: 55%;
+}
+
+
+.cpf {
+    width: 45%;
+}
+
+
+.corrida {
+    width: 55%;
+}
+
+
+.distancia {
+    width: 45%;
+}
+
+
+.camiseta {
+    width: 50%;
+}
+
+
+.categoria {
+    width: 50%;
+}
+
+
+/* INPUTS E SELECTS */
+
+select,
+input[type="text"] {
+    height: 42px;
+
+    padding: 8px;
+
+    box-sizing: border-box;
+
+    border: 2px solid #8b8b99;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    color: #7040a0;
+
+    background-color: white;
+}
+
+
+select:focus,
+input[type="text"]:focus {
+    outline: none;
+
+    border-color: #7040a0;
+}
+
+
+/* CATEGORIA */
+
+.categoria input {
+    background-color:white;
+}
+
+
+/* RADIOS */
+
+.opcoes {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    height: 42px;
+   
+}
+
+
+.opcoes label {
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 5px;
+
+    margin: 0;
+
+    color: #7040a0;
+
+    font-size: 15px;
+}
+
+
+.opcoes input {
+    accent-color: #7040a0;
+}
+
+
+/* VALOR */
+
+.valor-inscricao {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-top: 10px;
+
+    padding: 15px;
+
+    border: 1px solid #d7d7df;
+
+    border-radius: 8px;
+
+    background-color: #f5f6f8;
+
+    color: #333;
+
+    font-size: 17px;
+}
+
+
+.valor-inscricao span {
+    color: #28a745;
+
+    font-weight: bold;
+}
+
+
+/* TERMOS */
+
+.termos {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 18px;
+
+    color: #555;
+
+    font-size: 13px;
+}
+
+
+.termos input {
+    accent-color: #7040a0;
+}
