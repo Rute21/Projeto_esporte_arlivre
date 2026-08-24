@@ -20,6 +20,7 @@ export class AtletaComponent {
   bairro = ''
   cidade = ''
   uf = ''
+  datanascimento = ''
 
   idAtleta = 0
   editar = false
@@ -34,7 +35,7 @@ export class AtletaComponent {
 //DECLARAÇÃO DE FUNÇÕES
 exibirDados(){
   console.log(this.nome, this.cpf, this.sexo, this.cep,
-    this.uf, this.ruaLogradouro, this.bairro, this.cidade)
+    this.uf, this.ruaLogradouro, this.bairro, this.cidade,this.datanascimento)
 
     this.limparDados()
 }
@@ -57,6 +58,7 @@ exibirDados(){
     this.ruaLogradouro = ''
     this.bairro = ''
     this.cidade =''
+    this.datanascimento = ''
   }
 
   carregaDados(idAtleta: number){
@@ -72,6 +74,7 @@ exibirDados(){
         this.ruaLogradouro = dadosAtleta.ruaLogradouro
         this.bairro = dadosAtleta.bairro
         this.cidade = dadosAtleta.cidade
+        this.datanascimento = dadosAtleta.datanascimento
        
         //EXECUTA A DETECÇÃO DE ALTERAÇÃO MANUALMENTE
       this.cdr.detectChanges()
@@ -93,6 +96,8 @@ exibirDados(){
   atleta.bairro = this.bairro
   atleta.cidade = this.cidade
   atleta.uf = this.uf
+  atleta.datanascimento = this.datanascimento
+
 
   if(this.editar){
   atleta.id = this.idAtleta

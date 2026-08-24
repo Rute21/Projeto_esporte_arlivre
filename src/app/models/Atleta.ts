@@ -8,4 +8,5 @@ export class Atleta{
     ruaLogradouro: string = ''
     bairro: string = ''
     cidade: string = ''
+    datanascimento: string = ''
 }

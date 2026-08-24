@@ -1,22 +1,24 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+import{provideHttpClient} from '@angular/common/http';
+import { AtletaService } from '../../service/atleta-service';
 
-import { ListaAtleta } from './lista-atleta';
+describe('AtletaService', () => {
+  let service: AtletaService;
+  
 
-describe('ListaAtleta', () => {
-  let component: ListaAtleta;
-  let fixture: ComponentFixture<ListaAtleta>;
+  beforeEach( () => {
+     TestBed.configureTestingModule({
+      providers: [
+        AtletaService,provideHttpClient()
+      ]
+    });
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [ListaAtleta],
-    }).compileComponents();
-
-    fixture = TestBed.createComponent(ListaAtleta);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
+    service = TestBed.inject( AtletaService);
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('deve calcular a idade corretamente', () => {
+    const resultado = service.calcularIdade('1976-05-05');
+
+    expect(resultado).toBe(50);
   });
 });

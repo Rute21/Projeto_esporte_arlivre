@@ -60,11 +60,16 @@ export class ListaAtleta {
         })
       }
     }
-  
+     
+
+    calcularIdade(dataNascimento: string){
+      return this.listaService.calcularIdade(dataNascimento)
+    }
    
     carregaDadosAtletaForm(atleta: Atleta) {
       this.router.navigate(['/cadastroAtleta', atleta.id])
       
     }
+
   }
   
