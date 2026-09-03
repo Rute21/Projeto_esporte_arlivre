@@ -11,128 +11,116 @@ import { Atleta } from '../../models/Atleta';
   styleUrl: './atleta-component.css',
 })
 export class AtletaComponent {
-  //DECLARANDO ATRIBUTOS
+
+  // DECLARANDO ATRIBUTOS
   nome = ''
-  cpf = 0
   sexo = ''
-  cep = 0
-  ruaLogradouro = ''
-  bairro = ''
-  cidade = ''
-  uf = ''
   datanascimento = ''
+  peso = 0
+  altura = 0
 
   idAtleta = 0
   editar = false
-  
-  //DECLARAÇÃO DO CONTRUTOR
+
+  // DECLARAÇÃO DO CONSTRUTOR
   constructor(
     private atletaService: AtletaService,
     private http: ActivatedRoute,
-    private cdr: ChangeDetectorRef 
-    ){}
+    private cdr: ChangeDetectorRef
+  ) {}
 
-//DECLARAÇÃO DE FUNÇÕES
-exibirDados(){
-  console.log(this.nome, this.cpf, this.sexo, this.cep,
-    this.uf, this.ruaLogradouro, this.bairro, this.cidade,this.datanascimento)
+  // DECLARAÇÃO DE FUNÇÕES
+  exibirDados() {
+    console.log(
+      this.nome,
+      this.sexo,
+      this.datanascimento,
+      this.peso,
+      this.altura
+    )
 
     this.limparDados()
-}
+  }
 
-  ngOnInit(){
+  ngOnInit() {
     this.idAtleta = Number(this.http.snapshot.paramMap.get('id'))
 
-    if(this.idAtleta > 0){
+    if (this.idAtleta > 0) {
       this.editar = true
       this.carregaDados(this.idAtleta)
     }
   }
 
-  limparDados(){
+  limparDados() {
     this.nome = ''
-    this.cpf = 0
     this.sexo = ''
-    this.cep = 0
-    this.uf = ''
-    this.ruaLogradouro = ''
-    this.bairro = ''
-    this.cidade =''
     this.datanascimento = ''
+    this.peso = 0
+    this.altura = 0
   }
 
-  carregaDados(idAtleta: number){
+  carregaDados(idAtleta: number) {
     this.atletaService.listarAtleta(idAtleta)
-    .subscribe({
-      next:(dadosAtleta)=>{
+      .subscribe({
+        next: (dadosAtleta) => {
 
-        this.nome = dadosAtleta.nome
-        this.cpf = dadosAtleta.cpf 
-        this.sexo = dadosAtleta.sexo
-        this.cep = dadosAtleta.cep
-        this.uf = dadosAtleta.uf
-        this.ruaLogradouro = dadosAtleta.ruaLogradouro
-        this.bairro = dadosAtleta.bairro
-        this.cidade = dadosAtleta.cidade
-        this.datanascimento = dadosAtleta.datanascimento
-       
-        //EXECUTA A DETECÇÃO DE ALTERAÇÃO MANUALMENTE
-      this.cdr.detectChanges()
+          this.nome = dadosAtleta.nome
+          this.sexo = dadosAtleta.sexo
+          this.datanascimento = dadosAtleta.datanascimento
+          this.peso = dadosAtleta.peso
+          this.altura = dadosAtleta.altura
 
-      },
-      error:(msgErro)=>{
-        console.log('ERRO AO LISTAR ATLETA', msgErro)
-      }
-    })
+          // EXECUTA A DETECÇÃO DE ALTERAÇÃO MANUALMENTE
+          this.cdr.detectChanges()
+        },
+
+        error: (msgErro) => {
+          console.log('ERRO AO LISTAR ATLETA', msgErro)
+        }
+      })
   }
 
-  enviarDadosAtleta(){
+  enviarDadosAtleta() {
+
     const atleta = new Atleta()
-  atleta.nome = this.nome
-  atleta.cpf = this.cpf
-  atleta.sexo = this.sexo
-  atleta.cep = this.cep
-  atleta.ruaLogradouro= this.ruaLogradouro
-  atleta.bairro = this.bairro
-  atleta.cidade = this.cidade
-  atleta.uf = this.uf
-  atleta.datanascimento = this.datanascimento
 
+    atleta.nome = this.nome
+    atleta.sexo = this.sexo
+    atleta.datanascimento = this.datanascimento
+    atleta.peso = this.peso
+    atleta.altura = this.altura
 
-  if(this.editar){
-  atleta.id = this.idAtleta
+    if (this.editar) {
 
-    this.atletaService.alterarAtleta(atleta)
-    .subscribe({
-      next:(resposta)=>{
-        console.log(resposta)
-      },
-      error:(msgErro)=>{
-        console.log(msgErro)
-      }
-    })
+      atleta.idpessoa = this.idAtleta
 
-  }else{
+      this.atletaService.alterarAtleta(atleta)
+        .subscribe({
+          next: (resposta) => {
+            console.log(resposta)
+          },
 
-    this.atletaService.salvarAtleta(atleta)
-  .subscribe({
-    next:(resposta)=>{
-      console.log(resposta)
-    },
-    error:(msgErro)=>{
-      console.log(msgErro)
+          error: (msgErro) => {
+            console.log(msgErro)
+          }
+        })
+
+    } else {
+
+      this.atletaService.salvarAtleta(atleta)
+        .subscribe({
+          next: (resposta) => {
+            console.log(resposta)
+          },
+
+          error: (msgErro) => {
+            console.log(msgErro)
+          }
+        })
     }
-  })
 
+    this.limparDados()
 
+    this.atletaService.listarAtletas()
   }
-
-
-  
-  this.limparDados()
-
-  this.atletaService.listarAtletas()
-
-  }
-
 }

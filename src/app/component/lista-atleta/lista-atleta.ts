@@ -67,9 +67,18 @@ export class ListaAtleta {
     }
    
     carregaDadosAtletaForm(atleta: Atleta) {
-      this.router.navigate(['/cadastroAtleta', atleta.id])
+      this.router.navigate(['/cadastroAtleta', atleta.idpessoa])
       
     }
+   
+    calcularIMC(peso: number, altura: number){
+      return this.listaService.calcularIMC(peso, altura);
+  }
+  
+    classificarIMC(peso: number, altura: number){
+      const imc = this.calcularIMC(peso, altura);
+      return this.listaService.classificarIMC(imc);
+  }
 
   }
   

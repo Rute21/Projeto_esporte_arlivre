@@ -3,6 +3,8 @@ import { CorridaListaComponent } from './corrida-lista-component';
 import { CorridaService } from '../../service/corrida/corrida-service';
 import { of } from 'rxjs';
 
+
+//DESCRIBE É O GRUPO DOS TESTES
 describe('CorridaListaComponent', () => {
   let component: CorridaListaComponent;
   let fixture: ComponentFixture<CorridaListaComponent>;
@@ -27,7 +29,7 @@ describe('CorridaListaComponent', () => {
       distancia25km: true
     }
   ];
-
+  //BEFOREACH SERVE PARA PREPARAR O AMBIENTE ANTES DE CADA TESTE
   beforeEach(async () => {
 
     corridaServiceMock = {
@@ -55,6 +57,7 @@ describe('CorridaListaComponent', () => {
     await fixture.whenStable();
   });
 
+  // IT SERVE PARA DEFINIR O QUE SERÁ TESTADO
   it('deve criar o componente', () => {
     expect(component).toBeTruthy();
   });
@@ -63,6 +66,7 @@ describe('CorridaListaComponent', () => {
 
     component.listar();
 
+    //EXPECT SERVE PARA VERIFICAR SE PO RESULTADO ESTÁ CORRETO
     expect(component.listaCorridas().length).toBe(2);
   });
 

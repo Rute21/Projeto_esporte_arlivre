@@ -1,53 +1,45 @@
 <section id="form">
-    <h2> {{!editar ? 'Cadastro ':'Alterar'}} de Atleta</h2>
 
-    <form id="form-atleta" (submit)="enviarDadosAtleta()">
-        <label for="nome">Nome Completo:</label>
-        <input type="text" name="nome" id="nome" [(ngModel)] = "nome" class="input01" maxlength="60"
-         required placeholder="Digite o nome completo">
+  <h2>{{!editar ? 'Cadastro ' : 'Alterar'}} de Atleta</h2>
 
-        <label for="datanascimento">Data de Nascimento:</label>
-        <input type="date" name="datanascimento" id="datanascimento" [(ngModel)] = "datanascimento" >
-        
-        <label for="cpf">CPF:</label>
-        <input type="text" name="cpf" id="cpf" [(ngModel)] = "cpf" class="input02" maxlength="14"
-        required placeholder="Digite o cpf">
+  <form id="form-atleta" (submit)="enviarDadosAtleta()">
 
-        <label for="sexo">Sexo:</label>
-        <input type="radio" name="sexo" id="sexo" [(ngModel)] = "sexo" class="radio01" 
-        required value="M"> <span>Masculino</span>
 
-       <input type="radio" name="sexo" id="sexo" [(ngModel)] = "sexo" class="radio01" 
-       required value="F"><span>Feminino</span>
+      <label for="nome">Nome Completo:</label>
+      <input type="text" name="nome" id="nome"[(ngModel)]="nome" class="input01" maxlength="60" required placeholder="Digite o nome completo">
 
-       <input type="radio" name="sexo" id="sexo" [(ngModel)] = "sexo" class="radio01" 
-       required value="N"><span> Não Declarar</span>
+      <label for="datanascimento">Data de Nascimento:</label>
+      <input type="date" name="datanascimento" id="datanascimento" [(ngModel)]="datanascimento" required>
 
-       <label for="uf">UF:</label>
-       <input type="text" name="uf" id="uf" [(ngModel)] = "uf" class="input02" maxlength="60"
-      required placeholder="Digite a uf">
-       
-       <label for="cep">CEP:</label>
-       <input type="text" name="cep" id="cep" [(ngModel)] = "cep" class="input02" maxlength="9"
-       required placeholder="Digite o cep">
 
-       <label for="ruaLogradouro">Rua/Logradouro:</label>
-       <input type="text" name="ruaLogradouro" id="ruaLogradouro" [(ngModel)] = "ruaLogradouro" class="input01" maxlength="100"
-        required placeholder="Digite a Rua ou Lagradouro">
+      <label for="sexo">Sexo:</label>
 
-      <label for="bairro">Bairro:</label>
-      <input type="text" name="bairro" id="bairro" [(ngModel)] = "bairro" class="input02" maxlength="60"
-      required placeholder="Digite o bairro"> 
+      <input type="radio" name="sexo" id="sexo-m" [(ngModel)]="sexo" class="radio01" required value="M">
+      <span>Masculino</span>
 
-      <label for="cidade">Cidade:</label>
-      <input type="text" name="cidade" id="cidade" [(ngModel)] = "cidade" class="input02" maxlength="60"
-      required placeholder="Digite a cidade">
+      <input type="radio" name="sexo" id="sexo-f"[(ngModel)]="sexo" class="radio01" required value="F">
+      <span>Feminino</span>
+
+      <input type="radio" name="sexo" id="sexo-n"[(ngModel)]="sexo" class="radio01" required value="N">
+      <span>Não Declarar</span>
+
+
+      <label for="peso">Peso (kg):</label>
+      <input type="number" name="peso" id="peso" [(ngModel)]="peso" class="input02" 
+      required placeholder="Digite o peso">
+
+      <label for="altura">Altura (m):</label>
+      <input type="number"name="altura" id="altura" [(ngModel)]="altura" class="input02"
+       step="0.01" required placeholder="Ex.: 1.65">
+
 
       <div id="div-btns">
-        <button type="submit" id="btnAdd">{{!editar ? 'Cadastrar':'Alterar'}}</button>
-        <button type="reset" id="btnLimpar">Limpar</button>
-      </div>
+          <button type="submit" id="btnAdd">{{!editar ? 'Cadastrar' : 'Alterar'}}</button>
 
-      
-    </form>
+          <button type="reset" id="btnLimpar"> Limpar</button>
+     </div>
+
+     
+  </form>
+
 </section>
